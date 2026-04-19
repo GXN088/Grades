@@ -1,0 +1,58 @@
+public class Main {
+    // Напишите свои методы здесь
+    
+    // Метод 1: Улучшение оценки по индексу
+    public static void improveGrade(int[] grades, int index) {
+        int newGrade = grades[index] + 5;
+        if (newGrade > 100) {
+            grades[index] = 100;
+        } else {
+            grades[index] = newGrade;
+        }
+    }
+    
+    // Метод 2: Замена провальных оценок (< 60) на 60
+    public static void replaceFailingGrade(int[] grades) {
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i] < 60) {
+                grades[i] = 60;
+            }
+        }
+    }
+    
+    // Метод 3: Добавление бонусных баллов ко всем оценкам
+    public static void addBonusPoints(int[] grades) {
+        for (int i = 0; i < grades.length; i++) {
+            grades[i] = grades[i] + 2;
+        }
+    }
+    
+    public static void main(String[] args) {
+        // Протестируйте свои методы с этими значениями
+        int[] grades = {70, 85, 55};
+        
+        improveGrade(grades, 0);
+        System.out.print("After improving grade: [");
+        for (int i = 0; i < grades.length; i++) {
+            System.out.print(grades[i]);
+            if (i < grades.length - 1) System.out.print(", ");
+        }
+        System.out.println("]");
+        
+        replaceFailingGrade(grades);
+        System.out.print("After replacing failing: [");
+        for (int i = 0; i < grades.length; i++) {
+            System.out.print(grades[i]);
+            if (i < grades.length - 1) System.out.print(", ");
+        }
+        System.out.println("]");
+        
+        addBonusPoints(grades);
+        System.out.print("After adding bonus: [");
+        for (int i = 0; i < grades.length; i++) {
+            System.out.print(grades[i]);
+            if (i < grades.length - 1) System.out.print(", ");
+        }
+        System.out.println("]");
+    }
+}
